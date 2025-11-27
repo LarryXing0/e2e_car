@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from mmengine.structures import InstanceData
 from unittest import TestCase
 
+
 def assigner_view(pred_instance, gt_instance):
     pass
 
@@ -26,5 +27,3 @@ class TestAssigner(TestCase):
         )
 
         expected_gt_inds = torch.LongTensor([1, 0])
-
-

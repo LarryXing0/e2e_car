@@ -31,7 +31,9 @@ from mmengine.registry import WEIGHT_INITIALIZERS as MMENGINE_WEIGHT_INITIALIZER
 from mmengine.registry import Registry
 
 # manage all kinds of runners like `EpochBasedRunner` and `IterBasedRunner`
-RUNNERS = Registry("runner", parent=MMENGINE_RUNNERS, locations=["perception.engine.runner"])
+RUNNERS = Registry(
+    "runner", parent=MMENGINE_RUNNERS, locations=["perception.engine.runner"]
+)
 # manage runner constructors that define how to initialize runners
 RUNNER_CONSTRUCTORS = Registry(
     "runner constructor",
@@ -44,12 +46,18 @@ LOOPS = Registry("loop", parent=MMENGINE_LOOPS, locations=["perception.engine.ru
 HOOKS = Registry("hook", parent=MMENGINE_HOOKS, locations=["perception.engine.hooks"])
 
 # manage data-related modules
-DATASETS = Registry("dataset", parent=MMENGINE_DATASETS, locations=["perception.datasets"])
+DATASETS = Registry(
+    "dataset", parent=MMENGINE_DATASETS, locations=["perception.datasets"]
+)
 DATA_SAMPLERS = Registry(
-    "data sampler", parent=MMENGINE_DATA_SAMPLERS, locations=["perception.datasets.samplers"]
+    "data sampler",
+    parent=MMENGINE_DATA_SAMPLERS,
+    locations=["perception.datasets.samplers"],
 )
 TRANSFORMS = Registry(
-    "transform", parent=MMENGINE_TRANSFORMS, locations=["perception.datasets.transforms"]
+    "transform",
+    parent=MMENGINE_TRANSFORMS,
+    locations=["perception.datasets.transforms"],
 )
 
 # manage all kinds of modules inheriting `nn.Module`
@@ -88,7 +96,9 @@ PARAM_SCHEDULERS = Registry(
     locations=["perception.engine.schedulers"],
 )
 # manage all kinds of metrics
-METRICS = Registry("metric", parent=MMENGINE_METRICS, locations=["perception.evaluation"])
+METRICS = Registry(
+    "metric", parent=MMENGINE_METRICS, locations=["perception.evaluation"]
+)
 # manage evaluator
 EVALUATOR = Registry(
     "evaluator", parent=MMENGINE_EVALUATOR, locations=["perception.evaluation"]
